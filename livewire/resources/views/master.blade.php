@@ -11,6 +11,8 @@
 
     <h2>Livewire Websit</h2>
 
+    <livewire:header />
+
     <livewire:scripts />
 </body>
 </html>
