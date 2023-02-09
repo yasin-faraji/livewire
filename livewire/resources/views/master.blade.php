@@ -11,7 +11,10 @@
 
     <h2>Livewire Websit</h2>
 
-    <livewire:header />
+    {{-- <h2>{{ $article['title'] }}</h2>
+    <h2>{{ $article['body'] }}</h2> --}}
+
+    <livewire:layouts.header :article="$article" />
 
     <livewire:scripts />
 </body>
