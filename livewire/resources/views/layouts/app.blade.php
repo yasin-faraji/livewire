@@ -14,7 +14,9 @@
     {{-- <h2>{{ $article['title'] }}</h2>
     <h2>{{ $article['body'] }}</h2> --}}
 
-    <livewire:layouts.header :article="$article" />
+    {{-- <livewire:layouts.header :article="$article" /> --}}
+
+    {{ $slot }}
 
     <livewire:scripts />
 </body>

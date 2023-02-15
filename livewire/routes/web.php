@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Articles\Index;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $article = [
-        'title' => 'this is article 1',
-        'body' => 'article body'
-    ];
-
     return view('master' , compact('article'));
 });
+
+Route::get('/articles' , Index::class);
