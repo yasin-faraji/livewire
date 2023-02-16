@@ -5,7 +5,9 @@
     </ul>
 </div>
 
-<ul>
+{{-- <ul>
     <li>{{ $article['title'] }}</li>
     <li>{{ $article['body'] }}</li>
-</ul>
+</ul> --}}
+
+<h1>{{ $article }}</h1>

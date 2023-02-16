@@ -19,4 +19,4 @@ Route::get('/', function () {
     return view('master' , compact('article'));
 });
 
-Route::get('/articles' , Index::class);
+Route::get('/articles/{article}' , Index::class);
