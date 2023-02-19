@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Articles\Index;
+use App\Http\Livewire\Auth\Register;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,10 @@ Route::get('/', function () {
 });
 
 Route::get('/articles/{article}' , Index::class);
+
+Route::get('auth/register' , Register::class);
+
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
