@@ -14,10 +14,6 @@ class Register extends Component
         dd($this->name);
     }
 
-    public function changeName($value){
-        $this->name = $value;
-    }
-
     public function render()
     {
         return view('livewire.auth.register');
