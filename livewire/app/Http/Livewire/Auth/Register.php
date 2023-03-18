@@ -6,12 +6,20 @@ use Livewire\Component;
 
 class Register extends Component
 {
+    public $name;
+    public $email;
+    public $password;
+
     public function register(){
-        dd('good job');
+        dd($this->name);
+    }
+
+    public function changeName($value){
+        $this->name = $value;
     }
 
     public function render()
     {
-        return view('livewire.auth.register' , ['name' => 'yasin']);
+        return view('livewire.auth.register');
     }
 }
