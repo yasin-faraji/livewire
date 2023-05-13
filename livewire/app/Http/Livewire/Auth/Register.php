@@ -12,6 +12,7 @@ class Register extends Component
 
     public function register(){
         dd($this->name);
+        // return $this->name;
     }
 
     public function render()
