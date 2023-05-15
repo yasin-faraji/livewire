@@ -10,9 +10,18 @@ class Register extends Component
     public $email;
     public $password;
 
+    protected $rules = [
+        'name' => 'required|min:6',
+        'email' => 'required|email|unique:user',
+        'password' => 'required|min:8'
+
+    ];
+
     public function register(){
-        dd($this->name);
-        // return $this->name;
+
+        $this->validate();
+
+        dd($this->email);
     }
 
     public function render()
