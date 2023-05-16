@@ -12,10 +12,16 @@ class Register extends Component
 
     protected $rules = [
         'name' => 'required|min:6',
-        'email' => 'required|email|unique:user',
+        'email' => 'required|email|unique:users',
         'password' => 'required|min:8'
 
     ];
+
+    public function updated($name){
+
+        $this->validateOnly($name);
+
+    }
 
     public function register(){
 
