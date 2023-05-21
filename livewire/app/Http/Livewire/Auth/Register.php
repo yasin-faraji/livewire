@@ -2,18 +2,25 @@
 
 namespace App\Http\Livewire\Auth;
 
+use App\Models\User;
 use Livewire\Component;
 
 class Register extends Component
 {
-    public $name;
-    public $email;
-    public $password;
+    // public $name;
+    // public $email;
+    // public $password;
+
+    public User $user;
+
+    public function mount(){
+        $this->user = new User();
+    }
 
     protected $rules = [
-        'name' => 'required|min:6',
-        'email' => 'required|email|unique:users',
-        'password' => 'required|min:8'
+        'user.name' => 'required|min:6',
+        'user.email' => 'required|email|unique:users,email',
+        'user.password' => 'required|min:8'
 
     ];
 
@@ -27,7 +34,12 @@ class Register extends Component
 
         $this->validate();
 
-        dd($this->email);
+        $this->user->password = bcrypt($this->user->password);
+        $this->user->save();
+
+        $this->user->name = '';
+        $this->user->email = '';
+        $this->user->password = '';
     }
 
     public function render()
