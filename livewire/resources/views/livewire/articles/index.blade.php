@@ -11,9 +11,7 @@
 
     <div class="container">
         @foreach ($articles as $article)
-            <h4>{{ $article->title }}</h4>
-            <p>{{ $article->body }}</p>
-            <div>like : {{ $article->like }} <button class="btn btn-sm btn-primary" wire:click='likeArticle({{ $article->id }})'>like</button></div>
+            <livewire:articles.article-box :article="$article">
         @endforeach
     </div>
 
