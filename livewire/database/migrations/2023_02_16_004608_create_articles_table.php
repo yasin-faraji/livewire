@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('body');
             $table->timestamps();
+            $table->integer('like')->default(0);
         });
     }
 

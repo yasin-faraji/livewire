@@ -16,9 +16,15 @@ class Index extends Component
     //     $this->article = Article::find($article);
     // }
 
+    public function likeArticle($id){
+        $article = Article::find($id);
+
+        $article->increment('like');
+    }
+
     public function render()
     {
 
-        return view('livewire.articles.index');
+        return view('livewire.articles.index' , ['articles' => Article::latest()->paginate(5)]);
     }
 }
