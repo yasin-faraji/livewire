@@ -37,9 +37,9 @@ class Register extends Component
         $this->user->password = bcrypt($this->user->password);
         $this->user->save();
 
-        $this->user->name = '';
-        $this->user->email = '';
         $this->user->password = '';
+
+        redirect('/');
     }
 
     public function render()
