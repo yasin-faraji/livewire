@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Articles\Index;
 use App\Http\Livewire\Auth\Register;
+use App\Http\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-
-    return view('master' , compact('article'));
-});
+Route::get('/', Home::class);
 
 Route::get('/articles' , Index::class);
 
