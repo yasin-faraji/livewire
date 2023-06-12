@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Auth;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class Register extends Component
@@ -14,7 +15,18 @@ class Register extends Component
     public User $user;
 
     public function mount(){
+        Log::info('mount method');
+
         $this->user = new User();
+    }
+
+
+    public function hydrate(){
+        Log::info('hydrate method');
+    }
+
+    public function dehydrate(){
+        Log::info('dehydrate method');
     }
 
     protected $rules = [
@@ -24,11 +36,18 @@ class Register extends Component
 
     ];
 
-    public function updated($name){
+    public function updatedUserEmail($value , $name){
 
-        $this->validateOnly($name);
+        dd($value);
 
     }
+
+
+    // public function updated($name , $value){
+
+    //     $this->validateOnly($name);
+
+    // }
 
     public function register(){
 
@@ -44,6 +63,8 @@ class Register extends Component
 
     public function render()
     {
+        Log::info('render method');
+
         return view('livewire.auth.register');
     }
 }
