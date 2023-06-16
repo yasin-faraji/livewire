@@ -8,8 +8,9 @@
         Articles List
     </h1>
 
-
     <div class="container">
+        <livewire:layouts.header>
+
         @foreach ($articles as $article)
             <livewire:articles.article-box :article="$article">
         @endforeach

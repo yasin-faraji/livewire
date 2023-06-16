@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Articles;
 
 use App\Models\Article;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class Index extends Component
@@ -10,17 +11,13 @@ class Index extends Component
 
     public Article $article;
 
-    // public function mount($article){
+    protected $listeners = [
+        'forTest' => 'handleTest'
+    ];
 
-
-    //     $this->article = Article::find($article);
-    // }
-
-    // public function likeArticle($id){
-    //     $article = Article::find($id);
-
-    //     $article->increment('like');
-    // }
+    public function handleTest(){
+        Log::info(" run handle text in index article");
+    }
 
     public function render()
     {

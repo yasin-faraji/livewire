@@ -2,12 +2,20 @@
 
 namespace App\Http\Livewire\Layouts;
 
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class Header extends Component
 {
 
-    public $article;
+
+    protected $listeners = [
+        'forTest' => 'myTest'
+    ];
+
+    public function myTest(){
+        Log::info("this is from header");
+    }
 
     public function render()
     {

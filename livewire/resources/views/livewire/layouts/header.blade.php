@@ -3,11 +3,15 @@
         <li>Home</li>
         <li>About</li>
     </ul>
+
+    <script>
+        document.addEventListener('livewire:load' , () => {
+
+                Livewire.on('forTest' , () => {
+                    console.log('good');
+                    {{ Log::info('bad'); }}
+                });
+
+        });
+    </script>
 </div>
-
-{{-- <ul>
-    <li>{{ $article['title'] }}</li>
-    <li>{{ $article['body'] }}</li>
-</ul> --}}
-
-<h1>{{ $article }}</h1>
